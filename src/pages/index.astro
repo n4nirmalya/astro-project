@@ -4,10 +4,39 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <Layout 
-  title="Nirmalya Dagar — Interactive Design & Performance Hub" 
+  title="ND.STUDIO — Interactive Design & Performance Hub" 
   description="Explore high-performance, visually stunning landing pages built with Astro, Tailwind CSS, and pure CSS animations."
   theme="dark"
 >
+  <!-- Top Header Navigation -->
+  <header class="w-full border-b border-slate-900/60 bg-slate-950/20 backdrop-blur-md py-6 px-6 relative z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <!-- Stylized logo combining the favicon elements -->
+        <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#a855f7" />
+              <stop offset="100%" stop-color="#06b6d4" />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="42" stroke="url(#logo-grad)" stroke-width="10" />
+          <circle cx="50" cy="50" r="20" fill="url(#logo-grad)" />
+        </svg>
+        <span class="font-display font-extrabold tracking-tight text-white text-lg">ND.STUDIO</span>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-slate-400 font-medium">
+        <span class="text-xs px-2.5 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 font-sans">Available for Hire</span>
+        <a href="https://github.com/n4nirmalya" target="_blank" class="hover:text-white transition-colors flex items-center gap-1.5 font-sans">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
   <main class="w-full max-w-7xl mx-auto px-6 py-12 md:py-24 flex-grow flex flex-col justify-center relative">
     <!-- Shifting blur background orbs -->
     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-600/10 rounded-full blur-[120px] pointer-events-none animate-float-orb-1"></div>

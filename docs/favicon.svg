@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="fav-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+  <!-- Outer ring mimicking dial/bezel -->
+  <circle cx="50" cy="50" r="40" stroke="url(#fav-grad)" stroke-width="10" />
+  <!-- Inner core -->
+  <circle cx="50" cy="50" r="18" fill="url(#fav-grad)" />
+  <!-- Center grid ticks -->
+  <path d="M 50 22 L 50 78 M 22 50 L 78 50" stroke="#030712" stroke-width="4" stroke-linecap="round" opacity="0.8" />
+</svg>
