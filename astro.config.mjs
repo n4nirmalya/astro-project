@@ -4,6 +4,7 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   base: '/astro-project',
+  outDir: './docs',
   integrations: [
     tailwind({
       // We will define custom styles in global.css rather than injecting theme-level default base
