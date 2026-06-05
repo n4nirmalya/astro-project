@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout 
+  title="The Grid — Creative Agency Showcase" 
+  description="Hyper-modern, dark-mode creative agency layout with border-drawing animations and infinite marquees."
+  theme="dark"
+>
+  <!-- Cyberpunk grid line drawing overlay -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <!-- Vertical Grid Lines -->
+    <div class="absolute left-1/4 top-0 bottom-0 w-[1px] bg-slate-900 origin-top animate-draw-grid"></div>
+    <div class="absolute left-2/4 top-0 bottom-0 w-[1px] bg-slate-900 origin-top animate-draw-grid [animation-delay:200ms]"></div>
+    <div class="absolute left-3/4 top-0 bottom-0 w-[1px] bg-slate-900 origin-top animate-draw-grid [animation-delay:400ms]"></div>
+    
+    <!-- Horizontal Grid Lines -->
+    <div class="absolute top-1/3 left-0 right-0 h-[1px] bg-slate-900 origin-left animate-draw-grid [animation-delay:100ms]"></div>
+    <div class="absolute top-2/3 left-0 right-0 h-[1px] bg-slate-900 origin-left animate-draw-grid [animation-delay:300ms]"></div>
+  </div>
+
+  <div class="relative z-10 min-h-screen flex flex-col justify-between bg-slate-950/40">
+    <!-- Navbar -->
+    <header class="border-b border-slate-900 backdrop-blur-md sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <a href={base} class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-700 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </a>
+          <span class="font-display font-bold tracking-tight text-white">THE_GRID.</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-8 text-sm text-slate-400 font-medium">
+          <a href="#work" class="hover:text-cyan-400 transition-colors">Work</a>
+          <a href="#services" class="hover:text-cyan-400 transition-colors">Services</a>
+          <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+          <a href="#contact" class="px-4 py-2 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 hover:bg-cyan-500 hover:text-slate-950 hover:border-transparent transition-all duration-300">Start Project</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20 md:py-32 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-8">
+          <span class="text-xs uppercase tracking-widest text-cyan-400 font-bold mb-4 block">DESIGN & TECHNOLOGY STUDIO</span>
+          <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-white mb-6 uppercase leading-none">
+            We build digital <br/>
+            <span class="bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent">experiences that matter.</span>
+          </h1>
+          <p class="text-slate-400 text-lg md:text-xl font-light max-w-2xl leading-relaxed mb-8">
+            An award-winning agency helping brands launch futuristic software products, interactive interfaces, and premium visuals. Powered by speed, styled with perfection.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#work" class="px-6 py-3 rounded-lg bg-cyan-400 text-slate-950 font-bold hover:bg-cyan-300 transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]">
+              Explore Our Work
+            </a>
+            <a href="#contact" class="px-6 py-3 rounded-lg border border-slate-800 hover:border-slate-700 text-white font-medium transition-all duration-300">
+              Get in Touch
+            </a>
+          </div>
+        </div>
+        <div class="lg:col-span-4 hidden lg:block">
+          <div class="border border-slate-900 bg-slate-950/60 p-6 rounded-2xl relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-cyan-500/10 rounded-full blur-2xl"></div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-slate-500 text-xs">AGENCY_METRICS</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            </div>
+            <div class="space-y-4">
+              <div class="p-3 border border-slate-900 rounded-lg bg-slate-900/20">
+                <span class="text-slate-500 text-xs block">PageSpeed Performance</span>
+                <span class="text-2xl font-bold text-cyan-400">100/100</span>
+              </div>
+              <div class="p-3 border border-slate-900 rounded-lg bg-slate-900/20">
+                <span class="text-slate-500 text-xs block">JS Payload Transmitted</span>
+                <span class="text-2xl font-bold text-slate-200">0.0 KB</span>
+              </div>
+              <div class="p-3 border border-slate-900 rounded-lg bg-slate-900/20">
+                <span class="text-slate-500 text-xs block">Engineered By</span>
+                <span class="text-2xl font-bold text-slate-200">N. Dagar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infinite Scroll Ticker Section -->
+    <section class="w-full border-y border-slate-900 py-8 bg-slate-950/20 backdrop-blur-sm overflow-hidden">
+      <div class="flex w-[200%] md:w-[150%] gap-16 whitespace-nowrap animate-marquee">
+        <!-- Loop 1 -->
+        <span class="text-xl md:text-3xl font-extrabold text-slate-700 uppercase tracking-widest flex items-center gap-4">
+          <span>CREATIVE VISION</span> <span class="w-2.5 h-2.5 rounded-full bg-cyan-500"></span>
+        </span>
+        <span class="text-xl md:text-3xl font-extrabold text-slate-700 uppercase tracking-widest flex items-center gap-4">
+          <span>HIGH PERFORMANCE</span> <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+        </span>
+        <span class="text-xl md:text-3xl font-extrabold text-slate-700 uppercase tracking-widest flex items-center gap-4">
+          <span>ZERO JS RUNTIME</span> <span class="w-2.5 h-2.5 rounded-full bg-cyan-500"></span>
+        </span>
+        <span class="text-xl md:text-3xl font-extrabold text-slate-700 uppercase tracking-widest flex items-center gap-4">
+          <span>TAILWIND STYLED</span> <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+        </span>
+        
+        <!-- Loop 2 (exact duplicate for seamless loop) -->
+        <span class="text-xl md:text-3xl font-extrabold text-slate-700 uppercase tracking-widest flex items-center gap-4">
+          <span>CREATIVE VISION</span> <span class="w-2.5 h-2.5 rounded-full bg-cyan-500"></span>
+        </span>
+        <span class="text-xl md:text-3xl font-extrabold text-slate-700 uppercase tracking-widest flex items-center gap-4">
+          <span>HIGH PERFORMANCE</span> <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+        </span>
+        <span class="text-xl md:text-3xl font-extrabold text-slate-700 uppercase tracking-widest flex items-center gap-4">
+          <span>ZERO JS RUNTIME</span> <span class="w-2.5 h-2.5 rounded-full bg-cyan-500"></span>
+        </span>
+        <span class="text-xl md:text-3xl font-extrabold text-slate-700 uppercase tracking-widest flex items-center gap-4">
+          <span>TAILWIND STYLED</span> <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+        </span>
+      </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="work" class="max-w-7xl mx-auto px-6 py-20 md:py-32 w-full">
+      <div class="flex flex-wrap items-end justify-between mb-16">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-cyan-400 font-bold block mb-2">SELECTED PROJECTS</span>
+          <h2 class="text-3xl md:text-5xl font-black text-white uppercase">CASE_STUDIES</h2>
+        </div>
+        <div class="text-slate-500 text-sm max-w-sm hidden md:block">
+          Clicking any project initiates standard high-speed routes loaded instantly via Astro view transitions.
+        </div>
+      </div>
+
+      <!-- Bento-style Case Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        
+        <!-- Case 1 -->
+        <div class="md:col-span-8 group relative overflow-hidden rounded-2xl border border-slate-900 bg-slate-900/10 p-6 flex flex-col justify-between min-h-[400px] hover:border-cyan-500/20 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/80 z-10"></div>
+          <!-- Grid mockup image representation built entirely in CSS to be ultra fast -->
+          <div class="absolute inset-0 z-0 bg-[#070b14] group-hover:scale-105 transition-transform duration-700 flex items-center justify-center overflow-hidden">
+            <div class="w-4/5 h-3/5 border border-cyan-500/20 rounded-xl relative p-4 bg-[#0c1424]/60">
+              <div class="flex gap-2 mb-4">
+                <span class="w-3 h-3 rounded-full bg-slate-800"></span>
+                <span class="w-3 h-3 rounded-full bg-slate-800"></span>
+                <span class="w-3 h-3 rounded-full bg-slate-800"></span>
+              </div>
+              <div class="h-2 w-1/3 bg-slate-800 rounded mb-2"></div>
+              <div class="h-8 w-2/3 bg-cyan-950/20 border border-cyan-800/10 rounded mb-4"></div>
+              <div class="grid grid-cols-3 gap-2">
+                <div class="h-16 bg-slate-900/50 border border-slate-800/60 rounded"></div>
+                <div class="h-16 bg-slate-900/50 border border-slate-800/60 rounded"></div>
+                <div class="h-16 bg-slate-900/50 border border-slate-800/60 rounded"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative z-20 flex justify-between items-start">
+            <span class="px-2.5 py-1 rounded bg-slate-900/80 border border-slate-800 text-xs font-mono text-cyan-400">01 / ENGINEERING & WEB</span>
+          </div>
+
+          <div class="relative z-20 mt-auto">
+            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">SOLARIS CLOUD</h3>
+            <p class="text-slate-400 text-sm max-w-md">
+              An immersive real-time edge telemetry dashboard built for serverless infrastructure monitoring and network visualization.
+            </p>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="md:col-span-4 group relative overflow-hidden rounded-2xl border border-slate-900 bg-slate-900/10 p-6 flex flex-col justify-between min-h-[400px] hover:border-cyan-500/20 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/80 z-10"></div>
+          <div class="absolute inset-0 z-0 bg-[#0f0e16] group-hover:scale-105 transition-transform duration-700 flex flex-col justify-center items-center p-6">
+            <!-- Shifting visual gradient sphere -->
+            <div class="w-32 h-32 rounded-full bg-gradient-to-tr from-violet-600 to-cyan-500 blur-md opacity-30 animate-pulse"></div>
+          </div>
+
+          <div class="relative z-20 flex justify-between items-start">
+            <span class="px-2.5 py-1 rounded bg-slate-900/80 border border-slate-800 text-xs font-mono text-cyan-400">02 / PRODUCT DESIGN</span>
+          </div>
+
+          <div class="relative z-20 mt-auto">
+            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">APEX ASSETS</h3>
+            <p class="text-slate-400 text-sm">
+              Next-gen institutional digital asset exchange system featuring high-frequency interactive charts and modular order books.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Details Grid -->
+    <section id="services" class="max-w-7xl mx-auto px-6 py-20 w-full border-t border-slate-900">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-cyan-400 font-bold block mb-2">WHAT WE FOCUS ON</span>
+          <h2 class="text-3xl font-black text-white uppercase mb-6">CAPABILITIES</h2>
+          <p class="text-slate-400 font-light leading-relaxed">
+            By shifting rendering layers to static build time, we guarantee performance index targets are hit natively.
+          </p>
+        </div>
+        
+        <div class="space-y-8 lg:col-span-2">
+          <div class="flex gap-6 p-6 border border-slate-900 bg-slate-900/20 rounded-xl hover:border-slate-800/80 transition-colors">
+            <div class="w-10 h-10 shrink-0 rounded-lg bg-cyan-950 flex items-center justify-center text-cyan-400 text-lg font-bold">1</div>
+            <div>
+              <h3 class="text-lg font-bold text-white mb-2">Static Site Generation (SSG)</h3>
+              <p class="text-slate-400 text-sm font-light leading-relaxed">
+                By rendering Pages to plain HTML, loading speeds are reduced by 85% compared to React client-side alternatives.
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex gap-6 p-6 border border-slate-900 bg-slate-900/20 rounded-xl hover:border-slate-800/80 transition-colors">
+            <div class="w-10 h-10 shrink-0 rounded-lg bg-indigo-950 flex items-center justify-center text-indigo-400 text-lg font-bold">2</div>
+            <div>
+              <h3 class="text-lg font-bold text-white mb-2">Hardware Accelerated Animations</h3>
+              <p class="text-slate-400 text-sm font-light leading-relaxed">
+                Animations run directly on the compositor thread using `transform` and `opacity` styles, avoiding main thread rendering stutters.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form (CSS-Only hover visual aids) -->
+    <section id="contact" class="max-w-7xl mx-auto px-6 py-20 md:py-32 w-full border-t border-slate-900">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="text-xs uppercase tracking-widest text-cyan-400 font-bold block mb-4">LET'S START</span>
+        <h2 class="text-3xl md:text-5xl font-black text-white uppercase mb-8">BUILD_SOMETHING_NEW</h2>
+        <div class="border border-slate-900 bg-slate-900/20 p-8 rounded-2xl text-left relative overflow-hidden">
+          <div class="absolute bottom-0 right-0 w-24 h-24 bg-indigo-500/5 rounded-full blur-3xl"></div>
+          <div class="space-y-6">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-mono">YOUR_NAME</label>
+              <input type="text" class="w-full bg-slate-950 border border-slate-900 rounded-lg h-12 px-4 text-white focus:outline-none focus:border-cyan-500/50 transition-colors" placeholder="e.g. Nirmalya Dagar" />
+            </div>
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-mono">EMAIL_ADDRESS</label>
+              <input type="email" class="w-full bg-slate-950 border border-slate-900 rounded-lg h-12 px-4 text-white focus:outline-none focus:border-cyan-500/50 transition-colors" placeholder="e.g. nirmalya@example.com" />
+            </div>
+            <button class="w-full h-12 rounded-lg bg-cyan-400 text-slate-950 font-bold uppercase hover:bg-cyan-300 transition-colors">Send Transmission</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="w-full text-center py-8 border-t border-slate-900 text-xs text-slate-600 bg-slate-950">
+      <p>© {new Date().getFullYear()} THE_GRID AGENCY. Astro Showcase.</p>
+    </footer>
+  </div>
+</Layout>

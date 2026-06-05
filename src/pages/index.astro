@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout 
+  title="Nirmalya Dagar — Interactive Design & Performance Hub" 
+  description="Explore high-performance, visually stunning landing pages built with Astro, Tailwind CSS, and pure CSS animations."
+  theme="dark"
+>
+  <main class="w-full max-w-7xl mx-auto px-6 py-12 md:py-24 flex-grow flex flex-col justify-center relative">
+    <!-- Shifting blur background orbs -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-600/10 rounded-full blur-[120px] pointer-events-none animate-float-orb-1"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-600/10 rounded-full blur-[120px] pointer-events-none animate-float-orb-2"></div>
+
+    <!-- Header Section -->
+    <div class="text-center relative z-10 mb-16 md:mb-24">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-violet-500/30 bg-violet-500/5 text-violet-400 text-xs md:text-sm font-medium mb-6 backdrop-blur-md">
+        <span class="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
+        Nirmalya Dagar • Interactive Design & Engineering Portfolio
+      </div>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight font-display mb-6 bg-clip-text text-transparent bg-gradient-to-r from-slate-100 via-slate-300 to-slate-500">
+        Next-Gen Web <span class="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">Design & Performance</span>
+      </h1>
+      <p class="text-slate-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed font-light">
+        A curated selection of high-end interface concepts and interactive layouts crafted by <strong class="text-slate-200">Nirmalya Dagar</strong>. Built using <strong class="text-slate-200">Astro</strong>, <strong class="text-slate-200">Tailwind CSS</strong>, and hardware-accelerated CSS effects.
+      </p>
+    </div>
+
+    <!-- Showcase Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10 mb-16">
+      
+      <!-- CONCEPT 1: THE GRID -->
+      <a 
+        href={`${base}/the-grid`} 
+        class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/40 p-8 flex flex-col justify-between h-[380px] transition-all duration-500 hover:-translate-y-2 hover:border-cyan-500/30 hover:bg-slate-900/60 neon-border-cyan"
+      >
+        <!-- Card Background Grid Effect -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#0e1726_1px,transparent_1px),linear-gradient(to_bottom,#0e1726_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+        <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-cyan-950/80 border border-cyan-800/40 flex items-center justify-center mb-6 text-cyan-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+            </svg>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-cyan-400 font-semibold font-sans">Case Study 01</span>
+          <h2 class="text-2xl font-bold mt-2 mb-4 font-sans text-slate-100 group-hover:text-cyan-300 transition-colors duration-300">GRID Studio</h2>
+          <p class="text-slate-400 text-sm leading-relaxed font-light">
+            Minimalist dark-mode creative agency identity. Features infinite marquees, hardware-accelerated draw-lines, and immersive CSS layouts.
+          </p>
+        </div>
+
+        <div class="flex items-center justify-between mt-6 pt-4 border-t border-slate-800/50">
+          <span class="text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors duration-300">CYBERPUNK MINIMALISM</span>
+          <span class="w-8 h-8 rounded-full bg-slate-800/60 group-hover:bg-cyan-500/20 text-slate-300 group-hover:text-cyan-300 flex items-center justify-center transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- CONCEPT 2: CHRONOS -->
+      <a 
+        href={`${base}/chronos`} 
+        class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/40 p-8 flex flex-col justify-between h-[380px] transition-all duration-500 hover:-translate-y-2 hover:border-amber-500/30 hover:bg-slate-900/60"
+      >
+        <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-amber-950/80 border border-amber-800/40 flex items-center justify-center mb-6 text-amber-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-amber-400 font-semibold font-sans">Case Study 02</span>
+          <h2 class="text-2xl font-bold mt-2 mb-4 font-serif text-slate-100 group-hover:text-amber-300 transition-colors duration-300">Chronos Horology</h2>
+          <p class="text-slate-400 text-sm leading-relaxed font-light">
+            Luxury mechanical watch showcase. Sophisticated editorial typography, sweeping ticking animations, and a fully interactive pure-CSS leather strap configurator.
+          </p>
+        </div>
+
+        <div class="flex items-center justify-between mt-6 pt-4 border-t border-slate-800/50">
+          <span class="text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors duration-300 font-serif italic">Luxury Editorial</span>
+          <span class="w-8 h-8 rounded-full bg-slate-800/60 group-hover:bg-amber-500/20 text-slate-300 group-hover:text-amber-300 flex items-center justify-center transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- CONCEPT 3: AURA -->
+      <a 
+        href={`${base}/aura`} 
+        class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/40 p-8 flex flex-col justify-between h-[380px] transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/30 hover:bg-slate-900/60 neon-border-violet"
+      >
+        <div class="absolute top-0 right-0 w-32 h-32 bg-violet-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-violet-950/80 border border-violet-800/40 flex items-center justify-center mb-6 text-violet-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <span class="text-xs uppercase tracking-widest text-violet-400 font-semibold font-sans">Case Study 03</span>
+          <h2 class="text-2xl font-bold mt-2 mb-4 font-display text-slate-100 group-hover:text-violet-300 transition-colors duration-300">Aura Analytics</h2>
+          <p class="text-slate-400 text-sm leading-relaxed font-light">
+            Futuristic glassmorphic SaaS interface. Shifting gradient backgrounds, real-time node flow visuals, and an interactive billing matrix.
+          </p>
+        </div>
+
+        <div class="flex items-center justify-between mt-6 pt-4 border-t border-slate-800/50">
+          <span class="text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors duration-300">GLASSMORPHIC SAAS</span>
+          <span class="w-8 h-8 rounded-full bg-slate-800/60 group-hover:bg-violet-500/20 text-slate-300 group-hover:text-violet-300 flex items-center justify-center transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Tech Stack Summary Banner -->
+    <div class="relative z-10 border border-slate-800/80 bg-slate-900/20 rounded-xl px-6 py-4 flex flex-wrap gap-y-4 gap-x-8 items-center justify-between backdrop-blur-md">
+      <div class="text-xs md:text-sm text-slate-400">
+        Engineered by <strong class="text-slate-200">Nirmalya Dagar</strong>. Optimized for production performance.
+      </div>
+      <div class="flex gap-4 items-center">
+        <span class="text-xs px-2.5 py-0.5 rounded bg-orange-500/10 text-orange-400 border border-orange-500/20">Astro 4</span>
+        <span class="text-xs px-2.5 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">Tailwind 3</span>
+        <span class="text-xs px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Pure CSS</span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="w-full text-center py-6 border-t border-slate-900 text-xs text-slate-500 relative z-10 bg-[#030712]/80">
+    <p>© {new Date().getFullYear()} Nirmalya Dagar. Crafted for Production.</p>
+  </footer>
+</Layout>
